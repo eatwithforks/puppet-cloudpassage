@@ -24,12 +24,12 @@ provisioner:
   require_chef_for_busser: true
 
 platforms:
-  - name: centos7
+  - name: centos6
     driver:
-      image_id: <%= ENV['CENTOS_7_AMI_ID'] %>
+      image_id: <%= ENV['CENTOS_6_AMI_ID'] %>
       user_data: <%= ENV['KITCHEN_EC2_USER_DATA'] %>
     transport:
-      username: <%= ENV['CENTOS_7_USER'] %>
+      username: <%= ENV['CENTOS_6_USER'] %>
 
 
 suites:
