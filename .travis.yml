@@ -11,4 +11,18 @@ env:
   - PUPPET_VERSION="~> 4.9.3"
   - PUPPET_VERSION="~> 4.9.4"
 sudo: required
+install:
+  - bundle install
+  - puppet module install puppetlabs/apt
+  - puppet module install puppet/download_file
+  - puppet module install puppetlabs/powershell
+  - puppet module install puppetlabs/stdlib
+script:
+  - pwd
+# notifications:
+#   email:
+#     recipients:
+#       - toolbox@cloudpassage.com
+#     on_success: never
+#     on_failure: always
 

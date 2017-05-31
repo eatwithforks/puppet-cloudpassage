@@ -12,6 +12,10 @@ end
 
 namespace :integration do
   require 'kitchen/cli'
+  require_relative 'libraries/s3.rb'
+  ssh_key = S3.show_object_contents(ENV['S3_SSH_Key_Bucket'], ENV['S3_SSH_Key_Name'])
+  File.write(ENV['S3_SSH_Key_Name'], ssh_key)
+
   task :ubuntu do
     desc 'Run ubuntu kitchen-test'
     ENV['KITCHEN_YAML'] = '.kitchen.ubuntu.yml'

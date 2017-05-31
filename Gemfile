@@ -1,9 +1,10 @@
 source "https://rubygems.org"
 
 gem 'puppet', '4.9.4'
+gem 'aws-sdk', '~>2.9.23'
 
-group :test do 
-  gem 'puppetlabs_spec_helper' 
+group :test do
+  gem 'puppetlabs_spec_helper'
   gem 'serverspec'
   gem 'kitchen-pester'
   gem 'test-kitchen', '1.15.0'
@@ -23,6 +24,5 @@ group :spec do
   gem 'rake'
   gem 'puppet-lint'
   gem 'rspec-puppet'
-  # gem 'puppet'
 end
 
