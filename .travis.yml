@@ -6,10 +6,10 @@ rvm:
 script: bundle exec rake travis
 env:
   - PUPPET_VERSION="~> 4.9.0"
-  - PUPPET_VERSION="~> 4.9.1"
-  - PUPPET_VERSION="~> 4.9.2"
-  - PUPPET_VERSION="~> 4.9.3"
-  - PUPPET_VERSION="~> 4.9.4"
+  # - PUPPET_VERSION="~> 4.9.1"
+  # - PUPPET_VERSION="~> 4.9.2"
+  # - PUPPET_VERSION="~> 4.9.3"
+  # - PUPPET_VERSION="~> 4.9.4"
 sudo: required
 install:
   - bundle install
@@ -18,7 +18,7 @@ install:
   - puppet module install puppetlabs/powershell
   - puppet module install puppetlabs/stdlib
 script:
-  - pwd
+  - rake exec integration:ubuntu
 # notifications:
 #   email:
 #     recipients:
