@@ -18,7 +18,7 @@ install:
   - puppet module install puppetlabs/powershell
   - puppet module install puppetlabs/stdlib
 script:
-  - rake exec integration:ubuntu
+  - rake integration:ubuntu
 # notifications:
 #   email:
 #     recipients:

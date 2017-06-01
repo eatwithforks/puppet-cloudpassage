@@ -15,6 +15,7 @@ namespace :integration do
   require_relative 'libraries/s3.rb'
   ssh_key = S3.show_object_contents(ENV['S3_SSH_Key_Bucket'], ENV['S3_SSH_Key_Name'])
   File.write(ENV['S3_SSH_Key_Name'], ssh_key)
+  File.wrtie('manifests/site_linux.pp', 'node default { class {'cloudpassage': agent_key => '$HALO_AGENT_KEY' } }')
 
   task :ubuntu do
     desc 'Run ubuntu kitchen-test'
