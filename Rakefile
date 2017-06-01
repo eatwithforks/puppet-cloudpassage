@@ -17,8 +17,7 @@ namespace :integration do
   File.write(ENV['S3_SSH_Key_Name'], ssh_key)
   File.chmod(0400, ENV['S3_SSH_Key_Name'], )
   File.write('manifests/site_linux.pp', "node default { class {'cloudpassage': agent_key => '#{ENV['HALO_AGENT_KEY']}' } }")
-  puts `cat manifests/site_linux.pp`
-  File.write('manifests/site.pp', "node default { class { 'cloudpassage': agent_key => #{ENV['HALO_AGENT_KEY']}, package_file => 'cphalo-#{ENV['HALO_AGENT_VERSION']}-win64.exe', package_url => 'https://production.packages.cloudpassage.com/windows/cphalo-#{ENV['HALO_AGENT_VERSION']}-win64.exe', destination_dir => 'C:\\Users\Administrator\Downloads', server_label => 'puppet_windows' } }")
+  File.write('manifests/site.pp', "node default { class { 'cloudpassage': agent_key => '#{ENV['HALO_AGENT_KEY']}', package_file => 'cphalo-#{ENV['HALO_AGENT_VERSION']}-win64.exe', package_url => 'https://production.packages.cloudpassage.com/windows/cphalo-#{ENV['HALO_AGENT_VERSION']}-win64.exe', destination_dir => 'C:\\Users\Administrator\Downloads', server_label => 'puppet_windows' } }")
 
   task :ubuntu do
     desc 'Run ubuntu kitchen-test'

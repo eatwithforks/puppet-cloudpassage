@@ -18,12 +18,16 @@ install:
   - puppet module install puppetlabs/powershell
   - puppet module install puppetlabs/stdlib
 script:
-  - puppet module list --tree
   - rake integration:ubuntu
-# notifications:
-#   email:
-#     recipients:
-#       - toolbox@cloudpassage.com
-#     on_success: never
-#     on_failure: always
+  - rake integration:amzn
+  - rake integration:centos
+  - rake integration:debian
+  - rake integration:rhel
+  - rake integration:windows
+notifications:
+  email:
+    recipients:
+      - toolbox@cloudpassage.com
+    on_success: never
+    on_failure: always
 
