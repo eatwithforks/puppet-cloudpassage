@@ -1,5 +1,5 @@
 require 'puppetlabs_spec_helper/rake_tasks'
-gem 'test-kitchen', '~>1.15.0'
+gem 'test-kitchen', '~>1.16.0'
 gem 'rspec', '>=3.3.0', '<3.5.0'
 require 'rake'
 require 'rspec'
