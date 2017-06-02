@@ -7,7 +7,7 @@ group :test do
   gem 'puppetlabs_spec_helper'
   gem 'serverspec'
   gem 'kitchen-pester'
-  gem 'test-kitchen', '1.15.0'
+  gem 'test-kitchen', '1.16.0'
   gem 'kitchen-ec2'
   gem 'kitchen-puppet'
   gem 'winrm'
